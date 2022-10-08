@@ -1,5 +1,7 @@
 defmodule KV.Bucket do
-  use Agent
+  #We want to say that bucket are actually temporary
+  #if they crash, regardless of the reason, they should not be restarted
+  use Agent, restart: :temporary
 
   @doc """
     start a new bucket
