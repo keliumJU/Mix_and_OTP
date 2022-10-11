@@ -1,0 +1,7 @@
+This concludes our optimization chapter. We have used ETS as a cache mechanism
+where reads can happen from nay processes but writes are still srealized through a 
+single process. More importantly, we have also learned that once data can be read asynchronously,
+we need to be aware of the race conditions it might introduce.
+
+In practice, if you find yourself in a position where you need a process registry for dynamic processes,
+you should use the Registry module(:( >:())) provided as part of Elixir.
